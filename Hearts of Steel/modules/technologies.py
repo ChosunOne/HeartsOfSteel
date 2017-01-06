@@ -1137,7 +1137,7 @@ class ArtilleryBarrellAmmo:
 class ArtilleryCarriageDesigns:
     def __init__(self, level):
         def ArtilleryCarriageDesignsTech(organization=0, hardAttack=0, defensiveness=0, toughness=0):
-            return Technology(organization=organization, hardAttack=hardAttack, defensiveness=defensiveness, toughness=toughness)
+            return Technology(name="Artillery Carriage Designs", organization=organization, hardAttack=hardAttack, defensiveness=defensiveness, toughness=toughness)
 
         self.units["hftrack_transport"] = ArtilleryCarriageDesignsTech(0.5)
         self.units["GER_hftrack_transport"] = ArtilleryCarriageDesignsTech(0.5)
@@ -1177,3 +1177,82 @@ class ArtilleryCarriageDesigns:
         self.units["ss_anti_tank_brigade"] = ArtilleryCarriageDesignsTech(hardAttack=0.5, defensiveness=0.6, toughness=0.1)
         self.units["ss_heavy_anti_tank_brigade"] = ArtilleryCarriageDesignsTech(hardAttack=0.5, defensiveness=0.6, toughness=0.1)
         self.units["ss_rocket_artillery_brigade"] = ArtilleryCarriageDesignsTech(hardAttack=0.1, defensiveness=0.7, toughness=0.1)
+
+class HeavyArtilleryEmplacements:
+    def __init__(self, level):
+        def HeavyArtilleryEmplacementsTech(defensiveness=0, plainsDefense=0, riverDefense=0, urbanDefense=0, arcticDefense=0, desertDefense=0, woodsDefense=0,
+            forestDefense=0, jungleDefense=0, hillsDefense=0, mountainDefense=0, marshDefense=0, fortDefense=0):
+            return Technology("Heavy Artillery Emplacements", defensiveness=defensiveness, plainsDefense=plainsDefense, riverDefense=riverDefense, urbanDefense=urbanDefense,
+                arcticDefense=arcticDefense, desertDefense=desertDefense, woodsDefense=woodsDefense, forestDefense=forestDefense, jungleDefense=jungleDefense,
+                hillsDefense=hillsDefense, mountainDefense=mountainDefense, marshDefense=marshDefense, fortDefense=fortDefense)
+
+        self.units = {}
+        self.level = level
+        self.units["artillery_brigade"] = HeavyArtilleryEmplacementsTech(defensiveness=3, plainsDefense=0.15, riverDefense=0.15, urbanDefense=0.05, arcticDefense=0.15,
+            desertDefense=0.15, woodsDefense=0.15, forestDefense=0.15, jungleDefense=0.15, hillsDefense=0.15, mountainDefense=0.15, marshDefense=0.15, fortDefense=0.15)
+        self.units["medium_artillery_brigade"] = HeavyArtilleryEmplacementsTech(defensiveness=4.5, plainsDefense=0.15, riverDefense=0.15, urbanDefense=0.05, arcticDefense=0.15,
+            desertDefense=0.15, woodsDefense=0.15, forestDefense=0.15, jungleDefense=0.15, hillsDefense=0.15, mountainDefense=0.15, marshDefense=0.15, fortDefense=0.15)
+        self.units["ss_medium_artillery_brigade"] = HeavyArtilleryEmplacementsTech(defensiveness=4.5, plainsDefense=0.15, riverDefense=0.15, urbanDefense=0.05, arcticDefense=0.15,
+            desertDefense=0.15, woodsDefense=0.15, forestDefense=0.15, jungleDefense=0.15, hillsDefense=0.15, mountainDefense=0.15, marshDefense=0.15, fortDefense=0.15)
+        self.units["heavy_artillery_brigade"] = HeavyArtilleryEmplacementsTech(defensiveness=6, plainsDefense=0.15, riverDefense=0.15, urbanDefense=0.05, arcticDefense=0.15,
+            desertDefense=0.15, woodsDefense=0.15, forestDefense=0.15, jungleDefense=0.15, hillsDefense=0.15, mountainDefense=0.15, marshDefense=0.15, fortDefense=0.15)
+        self.units["ss_artillery_brigade"] = HeavyArtilleryEmplacementsTech(defensiveness=3, plainsDefense=0.15, riverDefense=0.15, urbanDefense=0.05, arcticDefense=0.15,
+            desertDefense=0.15, woodsDefense=0.15, forestDefense=0.15, jungleDefense=0.15, hillsDefense=0.15, mountainDefense=0.15, marshDefense=0.15, fortDefense=0.15)
+        self.units["ss_heavy_artillery_brigade"] = HeavyArtilleryEmplacementsTech(defensiveness=6, plainsDefense=0.15, riverDefense=0.15, urbanDefense=0.05, arcticDefense=0.15,
+            desertDefense=0.15, woodsDefense=0.15, forestDefense=0.15, jungleDefense=0.15, hillsDefense=0.15, mountainDefense=0.15, marshDefense=0.15, fortDefense=0.15)
+
+class ArtilleryFireControl:
+    def __init__(self, level):
+        def ArtilleryFireControlTech(softAttack=0, defensiveness=0, width=0, plainsAttack=0, plainsDefense=0, riverAttack=0, riverDefense=0, urbanAttack=0, urbanDefense=0,
+            arcticAttack=0, arcticDefense=0, desertAttack=0, desertDefense=0, woodsAttack=0, woodsDefense=0, forestAttack=0, forestDefense=0, jungleAttack=0, jungleDefense=0,
+            hillsAttack=0, hillsDefense=0, mountainAttack=0, mountainDefense=0, marshAttack=0, marshDefense=0, fortAttack=0, fortDefense=0):
+            return Technology("Artillery Fire Control Techniques", softAttack=softAttack, defensiveness=defensiveness, width=width, plainsAttack=plainsAttack, 
+                plainsDefense=plainsDefense, riverAttack=riverAttack, riverDefense=riverDefense, urbanAttack=urbanAttack, urbanDefense=urbanDefense, arcticAttack=arcticAttack,
+                arcticDefense=arcticDefense, desertAttack=desertAttack, desertDefense=desertDefense, woodsAttack=woodsAttack, woodsDefense=woodsDefense, forestAttack=forestAttack,
+                forestDefense=forestDefense, jungleAttack=jungleAttack, jungleDefense=jungleDefense, hillsAttack=hillsAttack, hillsDefense=hillsDefense, mountainAttack=mountainAttack,
+                mountainDefense=mountainDefense, marshAttack=marshAttack, marshDefense=marshDefense, fortAttack=fortAttack, fortDefense=fortDefense)
+
+        self.units = {}
+        self.level = level
+        self.units["artillery_brigade"] = ArtilleryFireControlTech(defensiveness=1.8, plainsAttack=0.1, plainsDefense=0.1, riverAttack=0.1, riverDefense=0.1, urbanAttack=0.1,
+            arcticAttack=0.1, arcticDefense=0.1, desertAttack=0.1, desertDefense=0.1, woodsAttack=0.1, woodsDefense=0.1, forestAttack=0.1, forestDefense=0.1, jungleAttack=0.1,
+            jungleDefense=0.1, hillsAttack=0.1, hillsDefense=0.1, mountainAttack=0.1, mountainDefense=0.1, marshAttack=0.1, marshDefense=0.1, fortAttack=0.1, fortDefense=0.1)
+        self.units["pack_artillery_brigade"] = ArtilleryFireControlTech(defensiveness=1.4, plainsAttack=0.1, plainsDefense=0.1, riverAttack=0.1, riverDefense=0.1, urbanAttack=0.1,
+            arcticAttack=0.1, arcticDefense=0.1, desertAttack=0.1, desertDefense=0.1, woodsAttack=0.1, woodsDefense=0.1, forestAttack=0.1, forestDefense=0.1, jungleAttack=0.1,
+            jungleDefense=0.1, hillsAttack=0.1, hillsDefense=0.1, mountainAttack=0.1, mountainDefense=0.1, marshAttack=0.1, marshDefense=0.1, fortAttack=0.1, fortDefense=0.1)
+        self.units["medium_artillery_brigade"] = ArtilleryFireControlTech(defensiveness=1.8, plainsAttack=0.1, plainsDefense=0.1, riverAttack=0.1, riverDefense=0.1, urbanAttack=0.1,
+            arcticAttack=0.1, arcticDefense=0.1, desertAttack=0.1, desertDefense=0.1, woodsAttack=0.1, woodsDefense=0.1, forestAttack=0.1, forestDefense=0.1, jungleAttack=0.1,
+            jungleDefense=0.1, hillsAttack=0.1, hillsDefense=0.1, mountainAttack=0.1, mountainDefense=0.1, marshAttack=0.1, marshDefense=0.1, fortAttack=0.1, fortDefense=0.1)
+        self.units["ss_artillery_brigade"] = ArtilleryFireControlTech(defensiveness=1.8, plainsAttack=0.1, plainsDefense=0.1, riverAttack=0.1, riverDefense=0.1, urbanAttack=0.1,
+            arcticAttack=0.1, arcticDefense=0.1, desertAttack=0.1, desertDefense=0.1, woodsAttack=0.1, woodsDefense=0.1, forestAttack=0.1, forestDefense=0.1, jungleAttack=0.1,
+            jungleDefense=0.1, hillsAttack=0.1, hillsDefense=0.1, mountainAttack=0.1, mountainDefense=0.1, marshAttack=0.1, marshDefense=0.1, fortAttack=0.1, fortDefense=0.1)
+        self.units["ss_pack_artillery_brigade"] = ArtilleryFireControlTech(defensiveness=1.4, plainsAttack=0.1, plainsDefense=0.1, riverAttack=0.1, riverDefense=0.1, urbanAttack=0.1,
+            arcticAttack=0.1, arcticDefense=0.1, desertAttack=0.1, desertDefense=0.1, woodsAttack=0.1, woodsDefense=0.1, forestAttack=0.1, forestDefense=0.1, jungleAttack=0.1,
+            jungleDefense=0.1, hillsAttack=0.1, hillsDefense=0.1, mountainAttack=0.1, mountainDefense=0.1, marshAttack=0.1, marshDefense=0.1, fortAttack=0.1, fortDefense=0.1)
+        self.units["ss_medium_artillery_brigade"] = ArtilleryFireControlTech(defensiveness=1.8, plainsAttack=0.1, plainsDefense=0.1, riverAttack=0.1, riverDefense=0.1, urbanAttack=0.1,
+            arcticAttack=0.1, arcticDefense=0.1, desertAttack=0.1, desertDefense=0.1, woodsAttack=0.1, woodsDefense=0.1, forestAttack=0.1, forestDefense=0.1, jungleAttack=0.1,
+            jungleDefense=0.1, hillsAttack=0.1, hillsDefense=0.1, mountainAttack=0.1, mountainDefense=0.1, marshAttack=0.1, marshDefense=0.1, fortAttack=0.1, fortDefense=0.1)
+        self.units["armored_support_brigade"] = ArtilleryFireControlTech(softAttack=2.00, defensiveness=1.8)
+        self.units["motorized_support_brigade"] = ArtilleryFireControlTech(softAttack=2.00, defensiveness=1.8)
+        self.units["mixed_support_brigade"] = ArtilleryFireControlTech(softAttack=2.00, defensiveness=1.8)
+        self.units["airborne_artillery_brigade"] = ArtilleryFireControlTech(softAttack=2.00, defensiveness=1.8)
+        self.units["ss_mixed_support_brigade"] = ArtilleryFireControlTech(softAttack=2.00, defensiveness=1.8)
+        self.units["ss_motorized_support_brigade"] = ArtilleryFireControlTech(softAttack=2.00, defensiveness=1.8)
+        self.units["ss_armored_support_brigade"] = ArtilleryFireControlTech(softAttack=2.00, defensiveness=1.8)
+        self.units["rocket_artillery_brigade"] = ArtilleryFireControlTech(softAttack=2.00, defensiveness=1.4)
+        self.units["sp_artillery_brigade"] = ArtilleryFireControlTech(defensiveness=1.8, plainsAttack=0.1, plainsDefense=0.1, riverAttack=0.1, riverDefense=0.1, urbanAttack=0.1,
+            arcticAttack=0.1, arcticDefense=0.1, desertAttack=0.1, desertDefense=0.1, woodsAttack=0.1, woodsDefense=0.1, forestAttack=0.1, forestDefense=0.1, jungleAttack=0.1,
+            jungleDefense=0.1, hillsAttack=0.1, hillsDefense=0.1, mountainAttack=0.1, mountainDefense=0.1, marshAttack=0.1, marshDefense=0.1, fortAttack=0.1, fortDefense=0.1)
+        self.units["sp_rct_artillery_brigade"] = ArtilleryFireControlTech(softAttack=2.00, defensiveness=1.4)
+        self.units["guard_sp_rct_artillery_brigade"] = ArtilleryFireControlTech(softAttack=3.00, defensiveness=1.6)
+        self.units["ss_rocket_artillery_brigade"] = ArtilleryFireControlTech(softAttack=2.00, defensiveness=1.4)
+        self.units["ss_sp_artillery_brigade"] = ArtilleryFireControlTech(defensiveness=1.8, plainsAttack=0.1, plainsDefense=0.1, riverAttack=0.1, riverDefense=0.1, urbanAttack=0.1,
+            arcticAttack=0.1, arcticDefense=0.1, desertAttack=0.1, desertDefense=0.1, woodsAttack=0.1, woodsDefense=0.1, forestAttack=0.1, forestDefense=0.1, jungleAttack=0.1,
+            jungleDefense=0.1, hillsAttack=0.1, hillsDefense=0.1, mountainAttack=0.1, mountainDefense=0.1, marshAttack=0.1, marshDefense=0.1, fortAttack=0.1, fortDefense=0.1)
+        self.units["ss_sp_rct_artillery_brigade"] = ArtilleryFireControlTech(softAttack=2.00, defensiveness=1.5)
+        self.units["heavy_artillery_brigade"] = ArtilleryFireControlTech(defensiveness=3.6, width=-0.5, plainsAttack=0.1, plainsDefense=0.1, riverAttack=0.1, riverDefense=0.1, urbanAttack=0.1,
+            arcticAttack=0.1, arcticDefense=0.1, desertAttack=0.1, desertDefense=0.1, woodsAttack=0.1, woodsDefense=0.1, forestAttack=0.1, forestDefense=0.1, jungleAttack=0.1,
+            jungleDefense=0.1, hillsAttack=0.1, hillsDefense=0.1, mountainAttack=0.1, mountainDefense=0.1, marshAttack=0.1, marshDefense=0.1, fortAttack=0.1, fortDefense=0.1)
+        self.units["ss_heavy_artillery_brigade"] = ArtilleryFireControlTech(defensiveness=3.6, width=-0.5, plainsAttack=0.1, plainsDefense=0.1, riverAttack=0.1, riverDefense=0.1, urbanAttack=0.1,
+            arcticAttack=0.1, arcticDefense=0.1, desertAttack=0.1, desertDefense=0.1, woodsAttack=0.1, woodsDefense=0.1, forestAttack=0.1, forestDefense=0.1, jungleAttack=0.1,
+            jungleDefense=0.1, hillsAttack=0.1, hillsDefense=0.1, mountainAttack=0.1, mountainDefense=0.1, marshAttack=0.1, marshDefense=0.1, fortAttack=0.1, fortDefense=0.1)
